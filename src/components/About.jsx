@@ -1,23 +1,38 @@
+// Import React, necessary for working with React components
 import React from 'react';
+
+// Import 'motion' from framer-motion for animations
 import { motion } from 'framer-motion';
+
+// Import custom styles
 import { styles } from '../styles';
+
+// Import custom animation functions from utils/motion
 import { fadeIn, textVariant } from '../utils/motion';
 
+// Import a Higher-Order Component (HOC) that wraps the section
 import StarWrapper from '../hoc/SectionWrapper';
 
+// Define the About component
 const About = () => {
   return (
     <>
+      {/* Animated container for the title */}
       <motion.div variants={textVariant()}>
+        {/* Title with dynamic styles and a highlighted span */}
         <h2 className={styles.sectionHeadText}>
           About <span className='text-amber-500'>me</span>.
         </h2>
       </motion.div>
 
+      {/* Animated paragraph with text content */}
       <motion.p
+        // Configuring the fadeIn animation with a slight delay and duration
         variants={fadeIn('', '', 0.1, 1)}
+        // Style classes for the paragraph
         className='mt-3 text-white text-[17px] max-w-3xl leading-[30px]'
       >
+        {/* Example placeholder text (Lorem Ipsum) */}
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
         enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -30,4 +45,5 @@ const About = () => {
   );
 };
 
+// Export the component wrapped with the StarWrapper HOC, with the identifier 'about'
 export default StarWrapper(About, 'about');
