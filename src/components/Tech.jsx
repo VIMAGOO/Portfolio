@@ -1,11 +1,10 @@
-// Importing necessary libraries and components
-import React, { useState } from 'react'; // React and useState for state management
-import { Tilt } from 'react-tilt'; // Importing Tilt for 3D hover effects
-import { motion } from 'framer-motion'; // For animation
-import { styles } from '../styles'; // Importing custom styles
-import { technologies } from '../constants'; // Importing technology data
-import { fadeIn, textVariant } from '../utils/motion'; // Importing animation variants
-import StarWrapper from '../hoc/SectionWrapper'; // Higher-order component for section wrapping
+import React, { useState } from 'react'; 
+import { Tilt } from 'react-tilt'; 
+import { motion } from 'framer-motion';
+import { styles } from '../styles'; 
+import { technologies } from '../constants';
+import { fadeIn, textVariant } from '../utils/motion'; 
+import StarWrapper from '../hoc/SectionWrapper';
 
 // Technology card component
 const TechonologiesCard = ({ index, icon, name }) => {
@@ -14,26 +13,26 @@ const TechonologiesCard = ({ index, icon, name }) => {
 
   // Functions to handle mouse enter and leave events
   const handleMouseEnter = () => {
-    setHovered(true); // Set hovered to true on mouse enter
+    setHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setHovered(false); // Set hovered to false on mouse leave
+    setHovered(false); 
   };
 
   return (
     <Tilt className="xs:w-[100px] items-center w-full"> {/* 3D tilt effect on card */}
       <motion.div
-        variants={fadeIn('right', 'spring', index * 0.1, 0.75)} // Animation variant
-        className="p-[9px] rounded-[10px]" // Padding and rounding styles
+        variants={fadeIn('right', 'spring', index * 0.1, 0.75)} 
+        className="p-[9px] rounded-[10px]" 
       >
         <div className="w-20 md:w-30 lg:w-[120px] bg-tertiary rounded-[10px] px-1 py-1 items-center min-w-[50px] bg-gradient-to-r from-[#1d1836] via-[#5b005c] to-amber-700" style={{ position: 'relative' }}>
           <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <img
-              src={icon} // Icon for the technology
-              alt={name} // Accessibility: alt text for the icon
-              className="object-contain" // Ensures image fits in the container
-              style={{ visibility: hovered ? 'hidden' : 'visible' }} // Hide icon when hovered
+              src={icon} 
+              alt={name} 
+              className="object-contain"
+              style={{ visibility: hovered ? 'hidden' : 'visible' }}
             />
             {hovered && (
               <div className="absolute top-0 left-0 w-full h-full text-white flex justify-center items-center text-center rounded-[10px]" style={{ zIndex: 1 }}>

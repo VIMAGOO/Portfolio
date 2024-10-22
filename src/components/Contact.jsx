@@ -1,15 +1,8 @@
-// Import React and hooks useRef and useState for managing form state and references
 import React, { useRef, useState } from "react";
-// Import 'motion' from framer-motion for animations
 import { motion } from "framer-motion";
-// Import emailjs for handling email service integration
 import emailjs from "@emailjs/browser";
-
-// Import custom styles
 import { styles } from "../styles";
-// Import a Higher-Order Component (HOC) that wraps the section
 import StarWrapper from '../hoc/SectionWrapper';
-// Import a custom animation variant
 import { slideIn } from "../utils/motion";
 
 // Define the Contact component

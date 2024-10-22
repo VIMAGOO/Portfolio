@@ -1,16 +1,7 @@
-// Import React, necessary for working with React components
 import React from 'react';
-
-// Import 'motion' from framer-motion for animations
 import { motion } from 'framer-motion';
-
-// Import custom styles
 import { styles } from '../styles';
-
-// Import custom animation functions from utils/motion
 import { fadeIn, textVariant } from '../utils/motion';
-
-// Import a Higher-Order Component (HOC) that wraps the section
 import StarWrapper from '../hoc/SectionWrapper';
 
 // Define the About component

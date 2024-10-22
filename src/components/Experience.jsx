@@ -1,17 +1,10 @@
-// Import React, components for creating a vertical timeline, and motion for animations
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { motion } from 'framer-motion';
-// Import the Higher-Order Component (HOC) for section wrapping
 import StarWrapper from '../hoc/SectionWrapper';
-// Import custom styles
 import { styles } from '../styles';
-// Import experience data from constants file
 import { experiences } from '../constants';
-// Import animation variants
 import { textVariant } from '../utils/motion';
-
-// Import vertical timeline styles
 import 'react-vertical-timeline-component/style.min.css';
 
 // ExperienceCard component to display individual experience cards in the timeline

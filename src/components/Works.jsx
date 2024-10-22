@@ -1,12 +1,11 @@
-// Importing necessary libraries and components
-import React from 'react'; // React for building the component
-import { Tilt } from 'react-tilt'; // Tilt for 3D hover effect
-import { motion } from 'framer-motion'; // For animations
-import { styles } from '../styles'; // Custom styles
-import { github } from '../assets'; // GitHub icon for source code links
-import StarWrapper from '../hoc/SectionWrapper'; // HOC for consistent styling
-import { projects } from '../constants'; // Importing project data
-import { fadeIn, textVariant } from '../utils/motion'; // Importing animation variants
+import React from 'react';
+import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion'; 
+import { styles } from '../styles';
+import { github } from '../assets'; 
+import StarWrapper from '../hoc/SectionWrapper';
+import { projects } from '../constants';
+import { fadeIn, textVariant } from '../utils/motion';
 
 // ProjectCard component to display individual projects
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
@@ -15,43 +14,43 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
       {/* Tilt effect for the card */}
       <Tilt
         options={{
-          max: 45, // Maximum tilt angle
-          scale: 1, // Scale factor
-          speed: 450, // Speed of the tilt effect
+          max: 45, 
+          scale: 1, 
+          speed: 450, 
         }}
         className="bg-gradient-to-r from-[#1d1836] via-[#5b005c] to-amber-700 p-5 rounded-2xl sm:w-[360px] w-full"
       >
         {/* Project image */}
         <div className="relative w-full h-[230px]">
           <img
-            src={image} // Project image source
-            alt="project_image" // Accessibility: alt text for the image
-            className="w-full h-full object-cover rounded-2xl" // Ensures image fills the card
+            src={image} 
+            alt="project_image" 
+            className="w-full h-full object-cover rounded-2xl"
           />
           {/* GitHub link overlay */}
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link, '_blank')} // Open source code link on click
+              onClick={() => window.open(source_code_link, '_blank')} 
               className="bg-[#1d1836] w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
-                src={github} // GitHub icon
-                alt="source code" // Accessibility: alt text for the icon
-                className="w-1/2 h-1/2 object-contain" // Ensures icon fits in the circle
+                src={github} 
+                alt="source code"
+                className="w-1/2 h-1/2 object-contain" 
               />
             </div>
           </div>
         </div>
         {/* Project details */}
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3> {/* Project name */}
-          <p className="mt-2 text-white text-[14px]">{description}</p> {/* Project description */}
+          <h3 className="text-white font-bold text-[24px]">{name}</h3> 
+          <p className="mt-2 text-white text-[14px]">{description}</p> 
         </div>
         {/* Project tags */}
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
-              #{tag.name} {/* Display each tag with its respective color */}
+              #{tag.name} 
             </p>
           ))}
         </div>
@@ -65,13 +64,12 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p> {/* Subheading */}
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2> {/* Main heading */}
+        <p className={`${styles.sectionSubText}`}>My work</p>
+        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2> 
       </motion.div>
-      {/* Description paragraph */}
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn('', '', 0.1, 1)} // Fade-in animation
+          variants={fadeIn('', '', 0.1, 1)} 
           className="mt-3 text-white text-[17px] max-w-3xl leading-[30px]"
         >
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
