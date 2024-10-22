@@ -1,10 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Hero, Navbar, Tech, Works } from "./components";
 
-// Main application component
+//Main application component
 const App = () => {
   return (
-    // BrowserRouter is used to enable navigation between pages
+
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
@@ -23,5 +23,5 @@ const App = () => {
   );
 }
 
-// Exporting the App component for use in other files
+//Exporting the App component for use in other files
 export default App;
